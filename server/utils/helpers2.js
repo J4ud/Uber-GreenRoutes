@@ -13,4 +13,11 @@ const encenderCamara = () => {
     });
 };
 
-  module.exports = { encenderCamara }
+
+const mostrarMensajeProductoPlastico = () => {
+  console.log("Se ha detectado un nuevo producto plástico");
+};
+
+  module.exports = { encenderCamara, mostrarMensajeProductoPlastico }
+
+  

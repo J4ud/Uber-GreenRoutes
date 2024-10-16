@@ -1,7 +1,7 @@
 // eventsExampleHandlers.js
 
 const { utilFuntion1, utilFuntion2 } = require("../utils/helpers");
-const { encenderCamara } = require("../utils/helpers2");
+const { encenderCamara, mostrarAlertaProductoPlastico, mostrarMensajeProductoPlastico  } = require("../utils/helpers2");
 
 //Eventos reales 
 const turnOnCamera = (socket, db, io) => {
@@ -18,8 +18,11 @@ const turnOnCamera = (socket, db, io) => {
 
 const plasticoReconocido = (socket, db, io) => {
   return (data) => {
-    // En el futuro, aquí es donde se implementaría la función de reconocimiento de plástico
+    // Emite el evento al servidor o a otros clientes
     io.emit("plastico reconocido", { message: "Se ha reconocido un plástico" });
+
+    // Llama a la función que muestra la alerta
+    mostrarMensajeProductoPlastico();
   };
 };
 

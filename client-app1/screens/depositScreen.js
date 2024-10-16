@@ -6,12 +6,10 @@ export default function renderScreen3() {
         <div class="container">
           <div class="content">
              <p class="title">¡Asegúrate de que tu producto esté dentro del cuadro!</p>
-            <div class="qr-code">
-              <img src="qr-code.png" alt="QR code">
-            </div>
-            <p class="description">El reciclaje tiene sus beneficios, y este código es la prueba. Canjéalo para aplicar tu cash y viajar sabiendo que hiciste la diferencia.</p>
-            <button id="simular">Simular</button>
-            <button id="pl-recog">Plastico Reconocido</button>
+            
+          <p class="description"> Esto nos ayudará a procesar correctamente el material y asegurarte que recibas el máximo beneficio.</p>
+          
+            <button id="plastico">Plastico Reconocido</button>
           </div>
         </div>
     `;
@@ -22,8 +20,10 @@ export default function renderScreen3() {
 
 
  
-    document.getElementById("pl-recog").addEventListener("click", () => {
-        socket.emit("turnCamera");
+    document.getElementById("plastico").addEventListener("click", () => {
+        socket.emit("plasticoReconocido");
+        router.navigateTo("/processing");
+
       });
     
   }

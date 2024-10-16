@@ -2,6 +2,7 @@ import renderScreen1 from "./screens/start.js";
 import renderScreen2 from "./screens/qrScreen.js";
 import renderScreen3 from "./screens/depositScreen.js";
 import socket from "./socket.js";
+import renderScreen4 from "./screens/processing.js";
 
 const router = new Router({ // check this for more features with Router: https://github.com/Graidenix/vanilla-router
   mode: "hash",
@@ -28,6 +29,11 @@ router.add("/screen2", async () => {
 router.add("/depositScreen", async () => {
   clearScripts();
   renderScreen3();
+});
+
+router.add("/processing", async () => {
+  clearScripts();
+  renderScreen4();
 });
 
 router.check().addUriListener();
