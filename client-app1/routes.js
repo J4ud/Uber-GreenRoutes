@@ -1,4 +1,4 @@
-import renderScreen1 from "./screens/screen1.js";
+import renderScreen1 from "./screens/start.js";
 import renderScreen2 from "./screens/screen2.js";
 import renderScreen3 from "./screens/screen3.js";
 import socket from "./socket.js";

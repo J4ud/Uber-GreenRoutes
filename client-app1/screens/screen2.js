@@ -4,7 +4,7 @@ export default function renderScreen2() {
   const app = document.getElementById("app");
   app.innerHTML = `
         <h1>Screen 2</h1>
-        <p>Welcome to Screen 2</p>
+        <p>Scan QR</p>
         <button id="requestButton">Request something to the server</button>
         <button id="goToScreen1">Go to Screen 1</button>
         <button id="goToScreen3">Go to Screen 3</button>
