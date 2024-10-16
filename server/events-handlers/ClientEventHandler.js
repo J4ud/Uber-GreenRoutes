@@ -1,6 +1,28 @@
 // eventsExampleHandlers.js
 
 const { utilFuntion1, utilFuntion2 } = require("../utils/helpers");
+const { encenderCamara } = require("../utils/helpers2");
+
+//Eventos reales 
+const turnOnCamera = (socket, db, io) => {
+  return async (data) => {
+    console.log("Evento 'turnCamera' recibido"); // Agrega un log aquí
+    try {
+      await encenderCamara();  // Llama a la función que enciende la cámara
+      io.emit("camera turned on");
+    } catch (error) {
+      io.emit("camera error", { error: "Failed to turn on the camera" });
+    }
+  };
+};
+
+const plasticoReconocido = (socket, db, io) => {
+  return (data) => {
+    // En el futuro, aquí es donde se implementaría la función de reconocimiento de plástico
+    io.emit("plastico reconocido", { message: "Se ha reconocido un plástico" });
+  };
+};
+
 
 // Assuming db and io are required or passed in some way to be accessible
 const startProccess = (socket, db, io) => {
@@ -39,6 +61,8 @@ const confirmProfile= (socket, db, io) => {
 };
 
 module.exports = {
+  turnOnCamera,
+  plasticoReconocido,
   startProccess,
   showsQR,
   CameraScreen,

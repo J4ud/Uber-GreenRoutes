@@ -1,6 +1,6 @@
 import renderScreen1 from "./screens/start.js";
-import renderScreen2 from "./screens/screen2.js";
-import renderScreen3 from "./screens/screen3.js";
+import renderScreen2 from "./screens/qrScreen.js";
+import renderScreen3 from "./screens/depositScreen.js";
 import socket from "./socket.js";
 
 const router = new Router({ // check this for more features with Router: https://github.com/Graidenix/vanilla-router
@@ -25,7 +25,7 @@ router.add("/screen2", async () => {
   renderScreen2();
 });
 
-router.add("/screen3", async () => {
+router.add("/depositScreen", async () => {
   clearScripts();
   renderScreen3();
 });
