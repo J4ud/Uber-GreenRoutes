@@ -1,11 +1,10 @@
-const { ClientEvents } = require("./Client1Events")
-const { IAEvents } = require("./IAEvents")
-const { serverEvents } = require("./ServerEvents")
+const db = require("../db");
 
-const handleEvents = (socket, io) => {
-  ClientEvents(socket, io)
-  serverEvents(socket, io)
-  IAEvents(socket, io)
-}
+const { plasticDetected } = require("../events-handlers/IAEventHandler");
 
-module.exports = { handleEvents }
+const IAEvents = (socket, io) => {
+  socket.on("plasticDetected", plasticDetected(socket, db, io));
+ 
+};
+
+module.exports = { IAEvents };
