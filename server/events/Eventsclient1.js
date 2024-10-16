@@ -15,4 +15,4 @@ const submitUsernameHandler = (socket, db, io, data) => {
       });
   };
   
-  module.exports = { Eventsclient1 };
+module.exports = { submitUsernameHandler };
