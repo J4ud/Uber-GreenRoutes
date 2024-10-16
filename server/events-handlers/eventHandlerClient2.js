@@ -38,8 +38,14 @@ function processCredits(socket, io) {
   sendCreditsHandler(socket, io, credits); // Envía los créditos al cliente 2
 }
 
+function qrScannedHandler(socket, db, io) {
+  
+}
+
 module.exports = {
   submitUsernameHandler,
   sendCreditsHandler,
-  processCredits
+  processCredits,
+  qrScannedHandler
 };
+//qrScannedHandler definirlo como función

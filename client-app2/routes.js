@@ -1,32 +1,32 @@
-import renderCodigoQR from "./screens/codigoqr";  // Pantalla de escaneo de QR
-import renderFormulario from "./screens/formulario";  // Pantalla de formulario
-import renderConfirmacionCreditos from "./screens/confirmacionCreditos";  // Pantalla de confirmación de créditos
-import renderReciclaje from "./screens/renderReciclaje";  // Nueva pantalla de reciclaje
+import renderCodigoQR from "./screens/codigoqr.js";  // Pantalla de escaneo de QR
+import renderFormulario from "./screens/formulario.js";  // Pantalla de formulario
+import renderConfirmacionCreditos from "./screens/confirmacioncreditos.js";  // Pantalla de confirmación de créditos
+import renderReciclaje from "./screens/renderReciclaje.js";  // Nueva pantalla de reciclaje
 
-import { socket } from "./socket.js";  // Importa el socket
+import socket from "./socket.js";  // Importa el socket
 
 const router = new Router({
   mode: "hash",
   page404: (path) => {
-    const app = document.getElementById("app");
+    const app = document.getElementById("app")
     app.innerHTML = `<h1>404 - Not Found</h1><p>The page you are looking for does not exist.</p>`;
   },
 });
 
 // Función para limpiar el contenido de la pantalla actual
 function clearScripts() {
-  document.getElementById("app").innerHTML = "";
+  document.getElementById("app").innerHTML = ""
 }
 
 // Definición de rutas
 router.add("/", async () => {
-  clearScripts();
-  renderCodigoQR();  // Pantalla principal que muestra el código QR
+  clearScripts()
+  renderCodigoQR()// Pantalla principal que muestra el código QR
 });
 
 router.add("/formulario", async () => {
-  clearScripts();
-  renderFormulario();  // Muestra el formulario
+  clearScripts()
+  renderFormulario()  // Muestra el formulario
 });
 
 router.add("/confirmacionCreditos", async () => {
