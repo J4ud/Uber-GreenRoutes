@@ -1,6 +1,5 @@
 const { Server } = require("socket.io")
-//const { handleEvents } = require("./events")
-const { handleEvents } = require("./events/index")
+const { handleEvents } = require("./events")
 
 let io
 
