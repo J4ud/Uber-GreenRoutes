@@ -1,13 +1,16 @@
 const db = require("../db");
-const { 
-  qrScannedHandler, 
-  submitUsernameHandler, 
-  completeRecycleProcessHandler  // Añadido el manejador de reciclaje
+const { qrScannedHandler, submitUsernameHandler, completeRecycleProcessHandler  // Añadido el manejador de reciclaje
 } = require("../events-handlers/eventHandlerClient2");
 
 const Eventsclient2 = (socket, io) => {
   // Manejador para el evento "qrScanned"
-  socket.on("qrScanned",  qrScannedHandler(socket, db, io));
+  socket.on("qrScanned", () => {
+    console.log("Evento qrScanned recibido en el servidor"); // Debug para confirmar que se recibe el evento
+
+    // Emitimos el evento 'qrScannedSuccess' de vuelta al cliente
+    socket.emit("qrScannedSuccess");
+  });
+
 
   // Manejador para el evento "submitUsername"
   socket.on("submitUsername", (data) => submitUsernameHandler(socket, db, io, data));

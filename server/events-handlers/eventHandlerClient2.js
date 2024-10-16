@@ -1,5 +1,12 @@
 const { utilFuntion1, utilFuntion2 } = require("../utils/helpers");
 
+
+const qrScannedHandler = (socket, db, io) => {
+  console.log("Evento qrScanned recibido en el servidor");
+  // Emitimos de vuelta el evento 'qrScannedSuccess' al cliente
+  socket.emit("qrScannedSuccess");
+};
+
 // Manejador del evento para guardar el nombre de usuario
 const submitUsernameHandler = (socket, db, io, data) => {
   const { username } = data;
@@ -39,7 +46,9 @@ function processCredits(socket, io) {
 }
 
 module.exports = {
+  qrScannedHandler,
   submitUsernameHandler,
   sendCreditsHandler,
   processCredits
+
 };

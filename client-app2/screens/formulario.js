@@ -28,4 +28,3 @@ export default function renderFormulario() {
     router.navigateTo("/reciclaje");
   });
 }
-A
