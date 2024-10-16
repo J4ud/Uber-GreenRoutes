@@ -1,4 +1,4 @@
-import { socket } from "../routes.js";
+import socket from "../routes.js";
 
 export default function renderReciclaje() {
   const app = document.getElementById("app");
