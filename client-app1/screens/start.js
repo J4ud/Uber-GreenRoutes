@@ -4,9 +4,9 @@ export default function renderScreen1() {
   const app = document.getElementById("app");
   app.innerHTML = `
         <h1>Screen 1</h1>
-        <p>This is the Screen 1 jdasdklajs</p>
+        <p>Inicio</p>
         <button id="emitButton">Emit Event</button>
-        <button id="goToScreen2">Go to Screen 2</button>
+        <button id="goToScreen2">Recicla</button>
     `;
 
   document.getElementById("emitButton").addEventListener("click", () => {
