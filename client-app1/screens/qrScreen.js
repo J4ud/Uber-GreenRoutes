@@ -23,7 +23,7 @@ export default function renderScreen2() {
 
   document.getElementById("simular").addEventListener("click", () => {
     socket.emit("turnCamera");
-    router.navigateTo("/depositScreen");
+    router.navigateTo("/cameraScreen");
   });
 
   
