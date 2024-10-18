@@ -1,30 +1,38 @@
-import { router,socket } from "../routes.js";
-
+import { router, socket } from "../routes.js";
 
 export default function renderFormulario() {
   const app = document.getElementById("app");
   app.innerHTML = `
-      <h1>Pantalla: Formulario de Usuario</h1>
-      <form id="qrForm">
-        <label for="username">Nombre de usuario:</label>
-        <input type="text" id="username" name="username" required>
-        
-        <button type="submit">Enviar</button>
-      </form>
-    `;
+    <h1>¡Regístrate y Comienza a Reciclar!</h1>
+    <form id="dataForm">
+      <h3>Por favor ingresa el nombre de usuario afiliado a tu aplicación de Uber</h3>
+      <input type="text" id="dataInput" placeholder="Ingresa tu nombre de usuario" required />
+  
+      <h3>Ingresa tu número de celular</h3>
+      <input type="tel" id="phoneInput" placeholder="Ingresa tu número de celular" required />
+      
+      <button type="submit">Enviar</button>
+    </form>
+  `;
 
-  const qrForm = document.getElementById("qrForm");
-  qrForm.addEventListener("submit", (event) => {
+  // Ahora obtendrá correctamente el formulario
+  const dataForm = document.getElementById("dataForm");
+
+  // Agregar evento para el envío del formulario
+  dataForm.addEventListener("submit", (event) => {
     event.preventDefault();
-    
-    const username = document.getElementById("username").value;
+    const formData = {
+      username: document.getElementById("dataInput").value,
+      phone: document.getElementById("phoneInput").value,
+    };
 
-    // Emitimos un evento al servidor con el nombre de usuario
-    socket.emit("submitUsername", { username });
+    console.log("Enviando datos del formulario...", formData);
+    socket.emit("submitForm", formData);
   });
 
-  // Escuchar cuando los datos del usuario han sido guardados
-  socket.on("usernameSaved", () => {
+  // Escuchar el evento 'formDataSaved' para confirmar que los datos fueron guardados
+  socket.on("formDataSaved", () => {
+    console.log("Datos del formulario guardados. Cambiando a pantalla de reciclaje...");
     router.navigateTo("/reciclaje");
   });
 }

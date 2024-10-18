@@ -11,15 +11,15 @@ export default function renderCodigoQR() {
   const qrButton = document.getElementById("qrButton");
   qrButton.addEventListener("click", () => {
     console.log("Botón de QR escaneado presionado. Emitiendo evento...");
+    
+    // Emitir el evento al servidor
     socket.emit("qrScanned");
     console.log("Evento qrScanned emitido");
-  });
 
-  // Escuchamos el evento 'qrScannedSuccess' desde el servidor
-  socket.on("qrScannedSuccess", () => {
-    console.log("Evento qrScannedSuccess recibido. Redirigiendo a formulario...");
-    router.navigateTo("/formulario"); // Cambiar a la pantalla del formulario
+    // Redirigir inmediatamente a la pantalla del formulario
+    console.log("Redirigiendo a formulario...");
+    router.navigateTo("/formulario");
   });
+  
 }
-
 
