@@ -5,7 +5,7 @@ export default function renderAwait() {
   app.innerHTML = `
         <div class="container">
           <div class="content">
-            <p class="title">Espera</p>
+            <p class="title">Completa el formulario en tu telefono</p>
           </div>
         </div>
     `;
