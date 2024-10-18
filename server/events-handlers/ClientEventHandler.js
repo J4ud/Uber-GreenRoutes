@@ -46,16 +46,8 @@ const CameraScreen= (socket, db, io) => {
   };
 };
 
-const NewProduct= (socket, db, io) => {
-  return (data) => {
-    io.emit("returnScreen1", { message: "ok" });
-  };
-};
-const SendProduct= (socket, db, io) => {
-  return (data) => {
-    io.emit("returnScreen1", { message: "ok" });
-  };
-};
+
+
 const DepositedProduct= (socket, db, io) => {
   return (data) => {
     io.emit("depositado", { message: "se ha depositado un producto" });
@@ -64,6 +56,11 @@ const DepositedProduct= (socket, db, io) => {
 const client2form= (socket, db, io) => {
   return (data) => {
     io.emit("client2form", { message: "Hacer el formulario en el cliente 2" });
+  };
+};
+const pCompleted= (socket, db, io) => {
+  return (data) => {
+    io.emit("pCompleted", { message: "Proceso completado" });
   };
 };
 
@@ -75,8 +72,8 @@ module.exports = {
   startProccess,
   showsQR,
   CameraScreen,
-  NewProduct,
-  SendProduct,
   DepositedProduct,
-  client2form
+  client2form,
+  pCompleted
+  
 };

@@ -17,9 +17,7 @@ export default function renderScreen2() {
         </div>
     `;
 
-    socket.on("connect", () => {
-      console.log("Socket conectado:", socket.id);
-  });
+    
 
 
   document.getElementById("simular").addEventListener("click", () => {

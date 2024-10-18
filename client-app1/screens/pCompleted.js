@@ -6,20 +6,28 @@ export default function renderScreen6() {
         <div class="container">
           <div class="content">
              <p class="title">¡Proceso Completado!</p>
-            
-          
-          
-           
           </div>
         </div>
     `;
 
-    socket.on("connect", () => {
-      console.log("Socket conectado:", socket.id);
-  });
+  // Emitir un evento cuando se renderiza la pantalla
+  socket.emit("pCompleted", { message: "El proceso ha sido completado" });
+
+      
+      
+    
+
+  
+    
+
+
+
+
+
+  };
 
 
  
   
-}
+
   

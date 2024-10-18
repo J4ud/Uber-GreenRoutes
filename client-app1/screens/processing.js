@@ -14,9 +14,7 @@ export default function renderScreen4() {
         </div>
     `;
 
-    socket.on("connect", () => {
-      console.log("Socket conectado:", socket.id);
-  });
+    
 
 
  

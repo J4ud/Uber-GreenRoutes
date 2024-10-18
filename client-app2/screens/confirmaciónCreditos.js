@@ -1,4 +1,4 @@
-import { router, socket } from "../routes.js";
+import { router,socket } from "../routes.js";
 
 export default function renderConfirmacionCreditos() {
   const app = document.getElementById("app");
@@ -15,6 +15,8 @@ export default function renderConfirmacionCreditos() {
     // Mostrar los créditos recibidos.
     creditosContainer.innerHTML = `<p>Has recibido ${data.creditos} créditos.</p>`;
   });
+
+  
 
   const finalizeButton = document.getElementById("finalizeButton");
   finalizeButton.addEventListener("click", () => {

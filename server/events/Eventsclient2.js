@@ -24,6 +24,11 @@ const Eventsclient2 = (socket, io) => {
   
 socket.on("dataSaved", dataSaved(socket, db, io));
 
+socket.on('pCompleted', (data) => {
+  // Actualiza la pantalla de Client 2 con la data del evento
+  // Por ejemplo, cambia la pantalla a una nueva vista o actualiza el contenido
+  console.log('pCompleted recibido en Client 2:', data);
+  // ... Tu lógica para actualizar la pantalla de Client 2 ...
   
   // // Manejador para el evento "creditsSent" para redirigir a la pantalla de confirmación de créditos
   // socket.on("creditsSent", () => {
@@ -34,7 +39,7 @@ socket.on("dataSaved", dataSaved(socket, db, io));
   // socket.on("finalizaReciclaje", () => {
   //   completeRecycleProcessHandler(socket, db, io);  // Llama al manejador para finalizar el reciclaje
 //   });
-};
+})};
 
 
 
