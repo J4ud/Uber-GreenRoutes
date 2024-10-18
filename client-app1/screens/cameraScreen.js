@@ -20,10 +20,7 @@ export default function renderCameraScreen() {
   const plasticoButton = document.getElementById("plastico");
   const errorMessage = document.getElementById("error-message");
 
-  socket.on("connect", () => {
-    console.log("Socket conectado:", socket.id);
-  });
-
+  
   plasticoButton.addEventListener("click", () => {
     socket.emit("plasticoReconocido");
     router.navigateTo("/processing");
