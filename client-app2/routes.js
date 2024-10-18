@@ -1,9 +1,12 @@
-import renderScreen1 from "./screens/screen1.js";
-import renderScreen2 from "./screens/screen2.js";
-import socket from "./socket.js";
+
+import renderFormulario from "./screens/formulario.js";  // Pantalla de formulario
+import renderConfirmacionCreditos from "./screens/confirmacioncreditos.js";  // Pantalla de confirmación de créditos
+import renderReciclaje from "./screens/renderReciclaje.js";  // Nueva pantalla de reciclaje
+import socket from "./socket.js";  // Importa el socket
+import renderStart from "./screens/start.js";
+//import Router from "vanilla-router";
 
 const router = new Router({
-  // check this for more features with Router: https://github.com/Graidenix/vanilla-router
   mode: "hash",
   page404: (path) => {
     const app = document.getElementById("app");
@@ -11,18 +14,40 @@ const router = new Router({
   },
 });
 
+// Función para limpiar el contenido de la pantalla actual
 function clearScripts() {
   document.getElementById("app").innerHTML = "";
 }
 
+// Definición de rutas
 router.add("/", async () => {
-  clearScripts();
-  renderScreen1();
+  clearScripts()
+  renderStart()  // Pantalla principal que muestra el código QR
 });
 
-router.add("/screen2", async () => {
+router.add("/formulario", async () => {
   clearScripts();
-  renderScreen2();
+  renderFormulario(); // Muestra el formulario
+});
+
+router.add("/confirmacionCreditos", async () => {
+  clearScripts()
+  renderConfirmacionCreditos()  // Pantalla de confirmación de créditos
+});
+
+router.add("/reciclaje", async () => {
+  clearScripts()
+  renderReciclaje()  // Pantalla de reciclaje
+});
+
+// Escuchar eventos del servidor
+socket.on("creditsSent", (data) => {
+  router.navigateTo("/confirmacionCreditos");  // Navega a la pantalla de confirmación de créditos
+});
+
+// Aquí puedes añadir el evento que desencadene la pantalla de reciclaje
+socket.on("recycleProcess", () => {
+  router.navigateTo("/reciclaje");  // Navega a la pantalla de reciclaje
 });
 
 router.check().addUriListener();
@@ -35,7 +60,5 @@ window.addEventListener("popstate", () => {
 document.addEventListener("DOMContentLoaded", () => {
   router.check();
 });
-
-router.check();
 
 export { router, socket };

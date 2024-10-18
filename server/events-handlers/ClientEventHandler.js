@@ -56,12 +56,18 @@ const SendProduct= (socket, db, io) => {
     io.emit("returnScreen1", { message: "ok" });
   };
 };
-
-const confirmProfile= (socket, db, io) => {
+const DepositedProduct= (socket, db, io) => {
   return (data) => {
-    io.emit("returnScreen1", { message: "ok" });
+    io.emit("depositado", { message: "se ha depositado un producto" });
   };
 };
+const client2form= (socket, db, io) => {
+  return (data) => {
+    io.emit("client2form", { message: "Hacer el formulario en el cliente 2" });
+  };
+};
+
+
 
 module.exports = {
   turnOnCamera,
@@ -71,5 +77,6 @@ module.exports = {
   CameraScreen,
   NewProduct,
   SendProduct,
-  confirmProfile
+  DepositedProduct,
+  client2form
 };

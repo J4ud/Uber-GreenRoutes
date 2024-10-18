@@ -1,6 +1,6 @@
 import { router, socket } from "../routes.js";
 
-export default function renderScreen4() {
+export default function renderScreen6() {
   const app = document.getElementById("app");
   app.innerHTML = `
         <div class="container">
@@ -20,8 +20,6 @@ export default function renderScreen4() {
 
 
  
-  setTimeout(() => {
-    router.navigateTo("/depositScreen");
-  }, 5000); // 5000 milisegundos = 5 segundos
+  
 }
   

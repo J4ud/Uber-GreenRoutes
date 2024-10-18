@@ -9,7 +9,7 @@ export default function renderScreen1() {
     `;
 
   document.getElementById("goToScreen2").addEventListener("click", () => {
-    router.navigateTo("/screen2");
+    router.navigateTo("/qrScreen");
   });
 }
 

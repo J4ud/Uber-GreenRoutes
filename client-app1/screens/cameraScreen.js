@@ -1,6 +1,6 @@
 import { router, socket } from "../routes.js";
 
-export default function renderScreen3() {
+export default function renderCameraScreen() {
   const app = document.getElementById("app");
   app.innerHTML = `
     <div class="container">

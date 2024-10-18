@@ -1,5 +1,6 @@
 import { router, socket } from "../routes.js";
 
+
 export default function renderScreen2() {
   const app = document.getElementById("app");
   app.innerHTML = `
@@ -22,8 +23,9 @@ export default function renderScreen2() {
 
 
   document.getElementById("simular").addEventListener("click", () => {
-    socket.emit("turnCamera");
-    router.navigateTo("/cameraScreen");
+    socket.emit("client2form");
+    router.navigateTo("/await");
+    
   });
 
   

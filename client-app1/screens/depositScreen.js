@@ -20,9 +20,9 @@ export default function renderScreen5() {
   });
 
 
-  document.getElementById("simular").addEventListener("click", () => {
-    socket.emit("turnCamera");
-    router.navigateTo("/cameraScreen");
+  document.getElementById("simular2").addEventListener("click", () => {
+    socket.emit("depositado");
+    router.navigateTo("/pCompleted");
   });
 
   
