@@ -1,7 +1,12 @@
 import renderScreen1 from "./screens/start.js";
-import renderScreen2 from "./screens/screen2.js";
-import renderScreen3 from "./screens/screen3.js";
+import renderScreen2 from "./screens/qrScreen.js";
+
 import socket from "./socket.js";
+import renderScreen4 from "./screens/processing.js";
+import renderScreen5 from "./screens/depositScreen.js";
+import renderScreen6 from "./screens/pCompleted.js";
+import renderAwait from "./screens/await.js";
+import renderCameraScreen from "./screens/cameraScreen.js";
 
 const router = new  ({ // check this for more features with Router: https://github.com/Graidenix/vanilla-router
   mode: "hash",
@@ -20,14 +25,31 @@ router.add("/", async () => {
   renderScreen1();
 });
 
-router.add("/screen2", async () => {
+router.add("/qrScreen", async () => {
   clearScripts();
   renderScreen2();
 });
-
-router.add("/screen3", async () => {
+router.add("/await", async () => {
   clearScripts();
-  renderScreen3();
+  renderAwait();
+});
+
+router.add("/cameraScreen", async () => {
+  clearScripts();
+  renderCameraScreen();
+});
+
+router.add("/processing", async () => {
+  clearScripts();
+  renderScreen4();
+});
+router.add("/depositScreen", async () => {
+  clearScripts();
+  renderScreen5();
+});
+router.add("/pCompleted", async () => {
+  clearScripts();
+  renderScreen6();
 });
 
 router.check().addUriListener();

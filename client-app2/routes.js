@@ -1,8 +1,10 @@
-import renderCodigoQR from "./screens/codigoqr.js";  // Pantalla de escaneo de QR
+
 import renderFormulario from "./screens/formulario.js";  // Pantalla de formulario
-import renderConfirmacionCreditos from "./screens/confirmacioncreditos.js";  // Pantalla de confirmación de créditos
+ // Pantalla de confirmación de créditos
 import renderReciclaje from "./screens/renderReciclaje.js";  // Nueva pantalla de reciclaje
 import socket from "./socket.js";  // Importa el socket
+import renderStart from "./screens/start.js";
+import renderConfirmacionCreditos from "./screens/confirmaciónCreditos.js";
 //import Router from "vanilla-router";
 
 const router = new Router({
@@ -21,7 +23,7 @@ function clearScripts() {
 // Definición de rutas
 router.add("/", async () => {
   clearScripts()
-  renderCodigoQR()  // Pantalla principal que muestra el código QR
+  renderStart()  // Pantalla principal que muestra el código QR
 });
 
 router.add("/formulario", async () => {

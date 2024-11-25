@@ -7,7 +7,7 @@ export default function renderReciclaje() {
       <p>Tu registro ha sido completado. Ahora acércate al punto de reciclaje y continúa el proceso en la pantalla principal.</p>
   `;
 
-  socket.on("something", () => {
+  socket.on("pCompleted", () => {
     console.log("cambia de pantalla");
     router.navigateTo("/confirmacioncreditos");
   });

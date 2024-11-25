@@ -1,0 +1,85 @@
+/* General Reset */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #0E0E0E;
+    color: #ffffff;
+  }
+  
+  /* Container */
+  .container {
+    width: 100%;
+    max-width: 1200px; /* Limita el ancho máximo */
+    margin: 90px auto; /* Centra horizontalmente y agrega espacio superior */
+    padding: 0px;
+    text-align: center;
+    position: relative;
+  }
+  
+  /* Title */
+  .title {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #fff;
+    z-index: 20; /* Asegura que el título esté sobre la imagen */
+  }
+  
+  /* Background Image */
+  .bgimage {
+    width: 85%;
+    margin: 0 auto;
+    display: block;
+    position: relative;
+  }
+  
+  /* Content Layout */
+  .content {
+    position: absolute; /* Permite posicionar dentro del contenedor */
+    top: 50%; /* Alinea verticalmente al centro */
+    left: 50%; /* Alinea horizontalmente al centro */
+    transform: translate(-50%, -50%); /* Ajusta la posición para centrar completamente */
+    display: flex; /* Activa flexbox para el contenido */
+    align-items: center; /* Alinea elementos verticalmente dentro del flexbox */
+    justify-content: center; /* Alinea elementos horizontalmente dentro del flexbox */
+    gap: 30px; /* Espacio entre los elementos */
+    z-index: 10; /* Asegura que esté sobre la imagen */
+  }
+  
+  /* QR Code Section */
+  .qr-code img {
+    width: 270px;
+    height: auto;
+    margin: 70px;
+  }
+  
+  /* Text Content Section */
+  .text-content {
+    width: 350px;
+    text-align: left; /* Alinea texto a la izquierda */
+    padding: 5px;
+    flex: 1; /* Permite que ocupe el espacio disponible */
+  }
+  
+  .description {
+    font-size: 1.5em;
+    color: #ffffff;
+  }
+  
+  /* Button */
+  .qr-button {
+    display: block; /* Asegura que esté en una nueva línea */
+    margin: 20px auto 0; /* Centra el botón y añade espacio superior */
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .qr-button:hover {
+    background-color: #0056b3;
+  }
+  

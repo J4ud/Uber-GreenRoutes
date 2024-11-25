@@ -1,18 +1,17 @@
 const db = require("../db");
-const { qrScanned, submitForm,  } = require("../utils/helpers2");
+const { save } = require("../db");
+
 // Manejador para el evento "qrScanned"
 
-const qrScanned = (socket) => {
+const qrScanned = (socket, db, io) => {
   console.log("Evento qrScanned recibido en el servidor");
   // Lógica adicional para manejar el escaneo del QR
 };
 
 // Manejador para el envío del formulario
-const submitForm = (socket, db, io, formData) => {
-  // Lógica para guardar los datos del formulario
+const submitForm = (socket, io, formData) => {
   console.log("Datos recibidos en submitForm:", formData);
-  // Ejemplo de cómo podrías guardar los datos en la base de datos
-  db.save(formData, (error) => {
+  save(formData, (error) => {
     if (error) {
       console.error("Error guardando datos:", error);
       socket.emit("formDataError", { error: "Error guardando datos" });
@@ -44,7 +43,14 @@ exports.processCredits = (socket, io) => {
   exports.sendCreditsHandler(socket, io, credits); // Envía los créditos al cliente 2
 };
 
+const dataSaved= (socket, db, io) => {
+  return (data) => {
+    io.emit("dataSaved", { message: "formulario completado" });
+  };
+};
+
 module.exports = {
   qrScanned,
-  submitForm
+  submitForm,
+  dataSaved
 };

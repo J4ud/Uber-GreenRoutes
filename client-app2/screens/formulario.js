@@ -15,10 +15,8 @@ export default function renderFormulario() {
     </form>
   `;
 
-  // Ahora obtendrá correctamente el formulario
   const dataForm = document.getElementById("dataForm");
 
-  // Agregar evento para el envío del formulario
   dataForm.addEventListener("submit", (event) => {
     event.preventDefault();
     const formData = {
@@ -28,6 +26,7 @@ export default function renderFormulario() {
 
     console.log("Enviando datos del formulario...", formData);
     socket.emit("submitForm", formData);
+    socket.emit("dataSaved"); // Emitir evento para notificar que los datos han sido guardados
   });
 
   // Escuchar el evento 'formDataSaved' para confirmar que los datos fueron guardados
