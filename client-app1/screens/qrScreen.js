@@ -11,8 +11,7 @@ export default function renderScreen2() {
               <img src="qr-code.png" alt="QR code">
             </div>
             <p class="description">El reciclaje tiene sus beneficios, y este código es la prueba. Canjéalo para aplicar tu cash y viajar sabiendo que hiciste la diferencia.</p>
-            <button id="simular" class=button>Simular</button>
-            
+            <button id="simular" class=button>este botón se quita</button>
           </div>
         </div>
     `;
