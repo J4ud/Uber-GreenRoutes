@@ -8,7 +8,7 @@ import renderScreen6 from "./screens/pCompleted.js";
 import renderAwait from "./screens/await.js";
 import renderCameraScreen from "./screens/cameraScreen.js";
 
-const router = new  ({ // check this for more features with Router: https://github.com/Graidenix/vanilla-router
+const router = new Router({ // check this for more features with Router: https://github.com/Graidenix/vanilla-router
   mode: "hash",
   page404: (path) => {
     const app = document.getElementById("app");
