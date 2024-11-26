@@ -1,0 +1,89 @@
+/* General Reset */
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: #0E0E0E;
+  color: #ffffff;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+/* Contenedor principal */
+.main-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  flex-grow: 1;
+  text-align: center;
+}
+
+/* Contenedor de contenido específico */
+.content-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  margin-top: 10px;
+}
+
+/* Título */
+.camera-title {
+  font-size: 2.5em;
+  margin-bottom: 0px;
+  padding-top: 30px;
+}
+
+/* Descripción */
+.camera-description {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+  max-width: 80%;
+  text-align: center;
+}
+
+/* Contenedor de la cámara */
+#webcam-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+/* Canvas de la cámara */
+#webcam-container canvas {
+  width: 100%; /* Ajusta al 100% del contenedor */
+  max-width: 600px; /* Aumenta el tamaño máximo del canvas */
+  height: auto; /* Mantiene la proporción de aspecto */
+  border: 5px solid transparent; /* Marco por defecto (invisible) */
+  border-radius: 10px; /* Esquinas redondeadas */
+  transition: border-color 0.3s ease; /* Suaviza la transición del borde */
+}
+
+/* Botón "Plástico Reconocido" */
+#plastico {
+  display: block;
+  margin: 30px auto; /* Espaciado superior ajustable */
+  background-color: #a1c480;
+  color: #0E0E0E;
+  padding: 10px 20px;
+  font-size: 18px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: center;
+}
+
+/* Mensaje de error */
+#error-message {
+  color: red;
+  margin-top: 20px;
+  font-size: 18px;
+}

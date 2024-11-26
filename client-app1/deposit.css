@@ -1,0 +1,82 @@
+/* General Reset */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; /* Centra todo en la pantalla */
+  }
+  
+  /* Contenedor principal de la página */
+  .page-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    flex-grow: 1;
+    text-align: center;
+  }
+  
+  /* Contenedor de contenido específico */
+  .body-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centra verticalmente */
+    align-items: center; /* Centra horizontalmente */
+    width: 100%;
+    max-width: 1200px; /* Limita el tamaño máximo del contenido */
+    margin-top: 10px;
+  }
+  
+  /* Título */
+  .headline {
+    font-size: 2.5em;
+    font-weight: bold;
+    margin-bottom: 20px;
+    padding-top: 20px;
+    text-align: center;
+  }
+  
+  /* Descripción */
+  .paragraph-info {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+    max-width: 80%;
+    text-align: center;
+  }
+  
+  /* Contenedor de la imagen */
+  .image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+  }
+  
+  /* Estilo de la imagen */
+  .image-container img {
+    width: 250px; /* Tamaño de la imagen ajustado a 300px */
+    height: auto;
+  }
+  
+  /* Estilo del botón */
+  #simular2 {
+    display: block;
+    margin: 20px auto;
+    background-color: green;
+    padding: 10px 20px;
+    color: white;
+    font-size: 18px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  #simular2:hover {
+    background-color: darkgreen;
+  }
+  
