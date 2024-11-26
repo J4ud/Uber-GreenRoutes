@@ -1,24 +1,143 @@
+/* Estilo global */
 body {
+  background-color: #0e0e0e; /* Fondo oscuro */
+  color: #faeeee; /* Color de texto blanco */
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding-top: 80px
+}
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0px;
+  background-color: #0E0E0E;
+  position: fixed; /* Hace que la navbar esté fija arriba */
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000; /* Asegura que siempre esté encima del contenido */
 }
 
-nav {
-  background-color: #333;
-  padding: 1em;
+.navbar-logo {
+  height: 85px;
 }
 
-nav a {
-  color: white;
-  margin-right: 1em;
-  text-decoration: none;
+/* Estilo para el título */
+h1 {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 2em;
 }
 
-nav a:hover {
-  text-decoration: underline;
+/* Estilo para el formulario */
+#dataForm {
+  max-width: 400px;
+  width: 100%;
+  margin: 20px auto;
+  padding: 30px;
+  background-color: #0E0E0E;
+  border-radius: 10px;
+  box-sizing: border-box;
 }
 
-#app {
-  padding: 2em;
+#dataForm p {
+  margin: 10px 0 20px; /* Espaciado entre el texto y los inputs */
+  text-align: center; /* Texto centrado */
+  font-size: 1.5em;
+}
+
+/* Estilo para las etiquetas */
+.form-label {
+  font-size: 1em;
+  margin-bottom: 10px; /* Espaciado entre la etiqueta y el input */
+  display: block; /* Hace que las etiquetas ocupen toda la línea */
+}
+
+/* Estilo para los inputs */
+#dataInput, #phoneInput {
+  width: 90%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 1px solid #f0e6e6;
+  border-radius: 10px;
+  color: #f0e6e6;
+  background-color: #0E0E0E;
+  font-size: 0.9em;
+}
+
+#dataInput::placeholder, #phoneInput::placeholder {
+  color: #ccc;
+}
+
+/* Estilo para el botón */
+button {
+  width: 98%;
+  padding: 12px;
+  background-color: #BAE394;
+  border: none;
+  border-radius: 10px;
+  color: rgb(26, 26, 26);
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+button:hover {
+  background-color: #aed887;
+}
+
+
+/* Estilo para pantallas pequeñas (móviles) */
+/* Estilo para pantallas pequeñas (móviles) */
+@media screen and (max-width: 740px) {
+  .navbar-logo {
+    height: 70px; /* Logo más grande */
+  }
+
+  h1 {
+    font-size: 1.5em; /* Texto más grande */
+    font-weight: normal; /* Texto no bold */
+    margin: 10px; /* Más espacio debajo del título */
+  }
+
+  #dataForm {
+    max-width: 360px;
+    width: calc(100% - 40px); /* Márgenes laterales agregados */
+    padding: 10px; /* Espacio interno */
+    margin: 20px auto; /* Centrado con espacio superior */
+  }
+
+  #dataForm p {
+    margin-bottom: 25px; /* Espacio entre texto y inputs */
+    font-size: 1em; /* Tamaño de texto del encabezado */
+  }
+
+  #dataInput, #phoneInput {
+    font-size: 15px; /* Inputs ligeramente más pequeños */
+    padding: 12px; /* Altura ajustada */
+    margin-bottom: 20px; /* Espaciado entre los inputs */
+    border-radius: 8px; /* Bordes redondeados */
+  }
+
+  #dataInput::placeholder, #phoneInput::placeholder {
+    font-size: 13px; /* Placeholder ligeramente más pequeño */
+  }
+
+  .form-label {
+    font-size: 0.8em; /* Label ajustado */
+    margin-bottom: 8px; /* Más separación del input */
+  }
+
+  button {
+    font-size: 17px; /* Botón ligeramente más pequeño */
+    padding: 14px; /* Ajustar altura del botón */
+    margin-top: 20px; /* Espacio superior del botón */
+  }
 }

@@ -1,0 +1,109 @@
+/* Estilo global */
+body {
+    background-color: #0e0e0e; /* Fondo oscuro */
+    color: white; /* Texto blanco */
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  
+  /* Estilo para el título */
+  h1 {
+    text-align: center;
+    font-size: 2.5em;
+    margin-top: 100px;
+    font-weight: normal; /* No bold */
+    margin-bottom: 20px;
+  }
+  
+  /* Estilo para el párrafo */
+  p {
+    text-align: center;
+    font-size: 1.2em;
+    margin: 10px 20px;
+    line-height: 1.6;
+  }
+  
+  /* Contenedor de créditos */
+  #creditosContainer {
+    text-align: center;
+    margin: 20px;
+  }
+  
+  #creditosContainer p {
+    font-size: 2.5em; /* Texto grande */
+    font-weight: bold;
+    color: #BAE394; /* Color del botón */
+  }
+  
+  /* Texto adicional */
+  #creditosContainer .message {
+    font-size: 1em;
+    color: white;
+    margin-top: 10px;
+  }
+  
+  /* Estilo del botón */
+  #finalizeButton {
+    display: block;
+    margin: 30px auto;
+    padding: 12px 20px;
+    background-color: #BAE394;
+    border: none;
+    border-radius: 10px;
+    color: rgb(19, 19, 19);
+    font-size: 1.2em;
+    cursor: pointer;
+  }
+  
+  #finalizeButton:hover {
+    background-color: #9fc47d;
+  }
+  
+  @media screen and (max-width: 400px) {
+    /* Añadir márgenes alrededor del contenido */
+    #app {
+      padding: 60px; /* Separar contenido de los bordes */
+    }
+  
+    /* Ajustar logo en la navbar */
+    .navbar-logo {
+        height: 70px; /* Logo más grande */
+      }
+  
+    /* Título principal más grande y no bold */
+    h1 {
+      font-size: 1.8em;
+      font-weight: normal;
+      margin: 20px 0;
+    }
+  
+    /* Contenedor de créditos */
+    #creditosContainer {
+      text-align: center;
+      margin: 20px; /* Márgenes laterales adicionales */
+    }
+  
+    #creditosContainer #creditosDinamicos {
+      font-size: 1.3em; /* Créditos acumulados */
+    }
+  
+    #creditosContainer #creditosValue {
+      font-size: 3em; /* Créditos dinámicos más grandes */
+      color: #BAE394;
+    }
+  
+    #creditosContainer .message {
+      font-size: 1em; /* Mensaje adicional más visible */
+      margin-top: 25px;
+    }
+  
+    /* Botón más grande */
+    #finalizeButton {
+      width: 90%;
+      padding: 15px;
+      font-size: 1.2em;
+      border-radius: 10px;
+    }
+  }
