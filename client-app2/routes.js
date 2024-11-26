@@ -46,7 +46,7 @@ socket.on("creditsSent", (data) => {
 });
 
 // Aquí puedes añadir el evento que desencadene la pantalla de reciclaje
-socket.on("recycleProcess", () => {
+socket.on("dataSaved", () => {
   router.navigateTo("/reciclaje");  // Navega a la pantalla de reciclaje
 });
 

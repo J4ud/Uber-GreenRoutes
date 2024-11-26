@@ -42,6 +42,7 @@ export default function renderFormulario() {
       const result = await response.json();
       console.log("Datos guardados correctamente:", result);
       socket.emit("dataSaved"); // Notifica que los datos se guardaron
+      socket.emit("recycleProcess"); // Notifica que los datos se guardaron
     } catch (error) {
       console.error("Error al enviar los datos:", error);
     }
