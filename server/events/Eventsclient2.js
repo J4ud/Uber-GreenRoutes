@@ -1,4 +1,4 @@
-const db = require("../db");
+const db = require("../db/entities/users");
 const { qrScanned, submitForm, dataSaved,    // Añadido el manejador de reciclaje
 } = require("../events-handlers/eventHandlerClient2");
 

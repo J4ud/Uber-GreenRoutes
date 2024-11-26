@@ -1,5 +1,5 @@
-const db = require("../db");
-const { save } = require("../db");
+const users = require("../db/entities/users");
+const { save } = require("../db/entities/index");
 
 // Manejador para el evento "qrScanned"
 
@@ -10,7 +10,7 @@ const qrScanned = (socket, db, io) => {
 
 // Manejador para el envío del formulario
 const submitForm = (socket, io, formData) => {
-  console.log("Datos recibidos en submitForm:", formData);
+  console.log("Datos recibidos en submitForm:");
   save(formData, (error) => {
     if (error) {
       console.error("Error guardando datos:", error);

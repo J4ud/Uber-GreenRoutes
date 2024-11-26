@@ -1,5 +1,7 @@
 import { router, socket } from "../routes.js";
 
+
+
 export default function renderCodigoQR() {
   const app = document.getElementById("app");
   app.innerHTML = `

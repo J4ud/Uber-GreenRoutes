@@ -1,4 +1,4 @@
-import { router,socket } from "../routes.js";
+import { router, socket } from "../routes.js";
 
 export default function renderConfirmacionCreditos() {
   const app = document.getElementById("app");

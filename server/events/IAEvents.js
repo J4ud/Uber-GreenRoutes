@@ -1,5 +1,4 @@
-const db = require("../db");
-
+const db = require("../db/entities/users");
 const { plasticDetected } = require("../events-handlers/IAEventHandler");
 
 const IAEvents = (socket, io) => {

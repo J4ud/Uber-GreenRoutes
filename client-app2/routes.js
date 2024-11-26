@@ -5,7 +5,6 @@ import renderReciclaje from "./screens/renderReciclaje.js";  // Nueva pantalla d
 import socket from "./socket.js";  // Importa el socket
 import renderStart from "./screens/start.js";
 import renderConfirmacionCreditos from "./screens/confirmaciónCreditos.js";
-//import Router from "vanilla-router";
 
 const router = new Router({
   mode: "hash",
@@ -22,8 +21,8 @@ function clearScripts() {
 
 // Definición de rutas
 router.add("/", async () => {
-  clearScripts()
-  renderStart()  // Pantalla principal que muestra el código QR
+  clearScripts();
+  renderStart();  // Pantalla principal que muestra el código QR
 });
 
 router.add("/formulario", async () => {
@@ -32,13 +31,13 @@ router.add("/formulario", async () => {
 });
 
 router.add("/confirmacionCreditos", async () => {
-  clearScripts()
-  renderConfirmacionCreditos()  // Pantalla de confirmación de créditos
+  clearScripts();
+  renderConfirmacionCreditos(); // Pantalla de confirmación de créditos
 });
 
 router.add("/reciclaje", async () => {
-  clearScripts()
-  renderReciclaje()  // Pantalla de reciclaje
+  clearScripts();
+  renderReciclaje(); // Pantalla de reciclaje
 });
 
 // Escuchar eventos del servidor
@@ -61,5 +60,7 @@ window.addEventListener("popstate", () => {
 document.addEventListener("DOMContentLoaded", () => {
   router.check();
 });
+
+router.check();
 
 export { router, socket };

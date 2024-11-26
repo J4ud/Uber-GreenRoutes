@@ -1,4 +1,4 @@
-const db = require("../db");
+const db = require("../db/entities/users");
 const { startProccess, showsQR, CameraScreen, NewProduct, SendProduct, DepositedProduct, turnOnCamera, plasticoReconocido, client2form, pCompleted} = require("../events-handlers/ClientEventHandler");
 
 const ClientEvents = (socket, io) => {
