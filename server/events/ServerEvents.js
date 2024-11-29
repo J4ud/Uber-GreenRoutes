@@ -1,4 +1,4 @@
-const db = require("../db");
+const db = require("../db/entities/users");
 const { waitForProduct, displayRegister, displayDeposit, displayProccessing, displayCompleted, sendCredits,} = require("../events-handlers/serverEventHandler");
 
 const serverEvents = (socket, io) => {

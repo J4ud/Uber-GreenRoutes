@@ -6,7 +6,11 @@ export default function renderCameraScreen() {
     <div class="container">
       <div class="content">
          <p class="title">¡Asegúrate de que tu producto esté dentro del cuadro!</p>
+<<<<<<< HEAD
          <p class="description">Esto nos ayudará a procesar correctamente el material y asegurarte que recibas tu máximo beneficio.</p>
+=======
+         <p class="description">Esto nos ayudará a procesar correctamente el material y asegurarte que recibas el máximo beneficio.</p>
+>>>>>>> develop-Jaud
          <button id="plastico" style="display: none;">Plastico Reconocido</button>
          <div id="webcam-container"></div>
          <div id="label-container"></div>

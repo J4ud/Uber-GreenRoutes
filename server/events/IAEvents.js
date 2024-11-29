@@ -1,5 +1,10 @@
+<<<<<<< HEAD
 const db = require("../db");
 const { recognizePlastic, processPlasticData } = require("../events-handlers/IAEventHandler");
+=======
+const db = require("../db/entities/users");
+const { plasticDetected } = require("../events-handlers/IAEventHandler");
+>>>>>>> develop-Jaud
 
 const IAEvents = (socket, io) => {
   // Evento para iniciar el reconocimiento de plástico

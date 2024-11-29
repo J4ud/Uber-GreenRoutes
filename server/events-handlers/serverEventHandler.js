@@ -2,15 +2,17 @@
 
 const { utilFuntion1, utilFuntion2 } = require("../utils/helpers");
 
+
 // Assuming db and io are required or passed in some way to be accessible
+
 const displayRegister = (socket, db, io) => {
   return (data) => {
-    io.emit("showSomething");
+    io.emit("register screen");
   };
 };
 const displayDeposit = (socket, db, io) => {
   return (data) => {
-    io.emit("showSomething");
+    io.emit("deposit screen");
   };
 };
 const waitForProduct = (socket, db, io) => {
@@ -20,22 +22,23 @@ const waitForProduct = (socket, db, io) => {
 };
 const displayProccessing = (socket, db, io) => {
   return (data) => {
-    io.emit("showSomething");
+    io.emit("proccessing screen");
   };
 };
 const displayCompleted = (socket, db, io) => {
   return (data) => {
-    io.emit("showSomething");
+    io.emit("completed screen");
   };
 };
 const sendCredits = (socket, db, io) => {
   return (data) => {
-    io.emit("showSomething");
+    io.emit("send credits");
   };
 };
 
 
 module.exports = {
+  
     displayRegister,
     displayDeposit,
   waitForProduct,

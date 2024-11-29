@@ -1,24 +1,91 @@
+/* General Reset */
 body {
-  font-family: Arial, sans-serif;
   margin: 0;
-  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: #0E0E0E;
+  color: #ffffff;
 }
 
-nav {
-  background-color: #333;
-  padding: 1em;
+/* Navbar */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0px;
+  background-color: #0E0E0E;
+  position: fixed; /* Hace que la navbar esté fija arriba */
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000; /* Asegura que siempre esté encima del contenido */
 }
 
-nav a {
-  color: white;
-  margin-right: 1em;
-  text-decoration: none;
+.navbar-logo {
+  height: 85px;
 }
 
-nav a:hover {
-  text-decoration: underline;
+/* Main Content */
+.main-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px;
+  gap: 10px;
+  margin-top: 80px; /* Desplaza el contenido hacia abajo para que no quede detrás de la navbar */
 }
 
-#app {
-  padding: 2em;
+/* Left Content (Text Section) */
+.content-left {
+  flex: 1;
+  text-align: left;
+  padding: 0px;
+}
+.infotext {
+  padding: 60px;
+}
+
+.infotext h2 {
+  font-size: 2.3em;
+}
+
+.infotext p {
+  font-size: 1.5em;
+}
+
+/* Right Content (Image and Button Section) */
+.content-right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.image-container {
+  position: relative; /* Contenedor relativo para posicionar elementos dentro de él */
+}
+
+.main-image {
+  max-width: 85%;
+  height: auto;
+  border-radius: 8px;
+}
+
+/* Button Positioned Over the Image */
+.button {
+  position: absolute; /* Coloca el botón encima de la imagen */
+  top: 85%; /* Ajusta esta posición según lo necesites */
+  left: 68%; /* Centra el botón horizontalmente */
+  transform: translate(-50%, -50%); /* Centra el botón completamente */
+  background-color: #BAE394;
+  color: #030303;
+  border: none;
+  padding: 25px 45px;
+  font-size: 1em;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.button:hover {
+  background-color: #a1c480;
 }

@@ -12,6 +12,11 @@ export default function renderScreen6() {
 
   // Emitir un evento cuando se renderiza la pantalla
   socket.emit("pCompleted", { message: "El proceso ha sido completado" });
+  socket.on("resetAllClients", () => {
+    console.log("Evento 'resetAllClients' recibido. Redirigiendo a la pantalla inicial...");
+    router.navigateTo("/");
+  });
+
 
       
       

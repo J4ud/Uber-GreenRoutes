@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import renderCodigoQR from "./screens/codigoqr.js";  // Pantalla de escaneo de QR
 import renderFormulario from "./screens/formulario.js";  // Pantalla de formulario
 import renderConfirmacionCreditos from "./screens/confirmacioncreditos.js";  // Pantalla de confirmación de créditos
@@ -5,6 +6,15 @@ import renderReciclaje from "./screens/renderReciclaje.js";  // Nueva pantalla d
 
 import socket from "./socket.js";  // Importa el socket
 import Router from "vanilla-router";
+=======
+
+import renderFormulario from "./screens/formulario.js";  // Pantalla de formulario
+ // Pantalla de confirmación de créditos
+import renderReciclaje from "./screens/renderReciclaje.js";  // Nueva pantalla de reciclaje
+import socket from "./socket.js";  // Importa el socket
+
+import renderConfirmacionCreditos from "./screens/confirmacion.js";
+>>>>>>> develop-Jaud
 
 const router = new Router({
   mode: "hash",
@@ -21,33 +31,44 @@ function clearScripts() {
 
 // Definición de rutas
 router.add("/", async () => {
+<<<<<<< HEAD
   clearScripts()
   renderCodigoQR()  // Pantalla principal que muestra el código QR
+=======
+  clearScripts();
+  renderFormulario();  // Pantalla principal que muestra el código QR
+>>>>>>> develop-Jaud
 });
 
 router.add("/formulario", async () => {
   clearScripts();
-  renderFormulario();  // Muestra el formulario
+  renderFormulario(); // Muestra el formulario
 });
 
-router.add("/confirmacionCreditos", async () => {
+router.add("/confirmacioncreditos", async () => {
   clearScripts();
-  renderConfirmacionCreditos();  // Pantalla de confirmación de créditos
+  renderConfirmacionCreditos(); // Pantalla de confirmación de créditos
 });
 
 router.add("/reciclaje", async () => {
   clearScripts();
-  renderReciclaje();  // Pantalla de reciclaje
+  renderReciclaje(); // Pantalla de reciclaje
 });
 
 // Escuchar eventos del servidor
 socket.on("creditsSent", (data) => {
-  router.navigateTo("/confirmacionCreditos");  // Navega a la pantalla de confirmación de créditos
+  router.navigateTo("/");  // Navega a la pantalla de confirmación de créditos
 });
 
 // Aquí puedes añadir el evento que desencadene la pantalla de reciclaje
-socket.on("recycleProcess", () => {
+socket.on("dataSaved", () => {
   router.navigateTo("/reciclaje");  // Navega a la pantalla de reciclaje
+});
+
+
+
+socket.on("depositado", () => {
+  router.navigateTo("/confirmacioncreditos");  // Navega a la pantalla de reciclaje
 });
 
 router.check().addUriListener();
@@ -60,5 +81,7 @@ window.addEventListener("popstate", () => {
 document.addEventListener("DOMContentLoaded", () => {
   router.check();
 });
+
+router.check();
 
 export { router, socket };
