@@ -1,5 +1,5 @@
 const db = require("../db/entities/users");
-const { qrScanned, submitForm, dataSaved,    // Añadido el manejador de reciclaje
+const { qrScanned, submitForm, dataSaved, finalizeProcess     // Añadido el manejador de reciclaje
 } = require("../events-handlers/eventHandlerClient2");
 
 const Eventsclient2 = (socket, io) => {
@@ -23,6 +23,8 @@ const Eventsclient2 = (socket, io) => {
 });
   
 socket.on("dataSaved", dataSaved(socket, db, io));
+
+socket.on("finalizeProcess", finalizeProcess(socket, db, io));
 
 socket.on('pCompleted', (data) => {
   // Actualiza la pantalla de Client 2 con la data del evento

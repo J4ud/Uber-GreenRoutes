@@ -49,8 +49,35 @@ const dataSaved= (socket, db, io) => {
   };
 };
 
+
+const finalizeProcess = (socket, db, io) => {
+  return async () => {
+    console.log("Evento 'finalizeProcess' recibido. Reiniciando clientes...");
+    try {
+      // Emitir evento para reiniciar a todos los clientes
+      io.emit("resetAllClients");
+
+      // Opcional: Desloguear a todos los usuarios en la base de datos
+      const { error } = await db
+        .from("users")
+        .update({ logged: false })
+        .neq("logged", false);
+
+      if (error) {
+        console.error("Error al desloguear usuarios:", error.message);
+        throw error;
+      }
+
+      console.log("Todos los usuarios deslogueados correctamente.");
+    } catch (error) {
+      console.error("Error en 'finalizeProcess':", error.message);
+    }
+  };
+};
+
 module.exports = {
   qrScanned,
   submitForm,
-  dataSaved
+  dataSaved,
+  finalizeProcess
 };

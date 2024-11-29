@@ -1,4 +1,4 @@
-const { findUserByEmail, createUser, updateUserLogged, addCreditsToLoggedUser } = require("../db/entities/users");
+const { findUserByEmail, createUser, updateUserLogged, addCreditsToLoggedUser,setAllUsersLoggedToFalse } = require("../db/entities/users");
 const { getIO } = require("../socket");
 
 
@@ -106,6 +106,16 @@ const updateCredits = async (req, res) => {
   }
 };
 
+const logoutAllUsers = async (req, res) => {
+  try {
+    await setAllUsersLoggedToFalse();
+    res.status(200).json({ message: "Todos los usuarios deslogueados correctamente" });
+  } catch (error) {
+    console.error("Error al desloguear usuarios:", error.message);
+    res.status(500).json({ message: "Error al desloguear usuarios" });
+  }
+};
+
 
 module.exports = {
   getUsers,
@@ -115,5 +125,6 @@ module.exports = {
   deleteUser,
   getAllUsers,
   addCreditsToLoggedUser,
-  updateCredits
+  updateCredits,
+  logoutAllUsers
 };

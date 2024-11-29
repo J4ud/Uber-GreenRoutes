@@ -40,8 +40,33 @@ export default function renderConfirmacionCreditos() {
     }
   });
 
+  socket.on("resetAllClients", () => {
+    console.log("Evento 'resetAllClients' recibido. Redirigiendo a la pantalla inicial...");
+    router.navigateTo("/");
+  });
+
   const finalizeButton = document.getElementById("finalizeButton");
-  finalizeButton.addEventListener("click", () => {
-    alert("Proceso finalizado. Gracias por reciclar.");
+  finalizeButton.addEventListener("click", async () => {
+    try {
+      // Emitir un evento para que el servidor reinicie a todos los clientes
+      socket.emit("finalizeProcess");
+
+      // Realizar una solicitud para desloguear a todos los usuarios
+      const response = await fetch("http://localhost:5050/api/users/logout-all", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+
+      if (!response.ok) {
+        throw new Error("Error al desloguear usuarios");
+      }
+
+      alert("Proceso finalizado. Gracias por reciclar.");
+    } catch (error) {
+      console.error("Error al finalizar:", error.message);
+      alert("Hubo un problema al finalizar el proceso");
+    }
   });
 }

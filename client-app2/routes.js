@@ -4,7 +4,7 @@ import renderFormulario from "./screens/formulario.js";  // Pantalla de formular
 import renderReciclaje from "./screens/renderReciclaje.js";  // Nueva pantalla de reciclaje
 import socket from "./socket.js";  // Importa el socket
 
-import renderConfirmacionCreditos from "./screens/confirmacionCreditos.js";
+import renderConfirmacionCreditos from "./screens/confirmacion.js";
 
 const router = new Router({
   mode: "hash",
@@ -42,13 +42,15 @@ router.add("/reciclaje", async () => {
 
 // Escuchar eventos del servidor
 socket.on("creditsSent", (data) => {
-  router.navigateTo("/confirmacioncreditos");  // Navega a la pantalla de confirmación de créditos
+  router.navigateTo("/");  // Navega a la pantalla de confirmación de créditos
 });
 
 // Aquí puedes añadir el evento que desencadene la pantalla de reciclaje
 socket.on("dataSaved", () => {
   router.navigateTo("/reciclaje");  // Navega a la pantalla de reciclaje
 });
+
+
 
 socket.on("depositado", () => {
   router.navigateTo("/confirmacioncreditos");  // Navega a la pantalla de reciclaje

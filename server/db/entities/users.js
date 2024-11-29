@@ -140,12 +140,32 @@ async function addCreditsToLoggedUser(credits) {
   }
 }
 
+// ----------------------------------------------------------
 
+const setAllUsersLoggedToFalse = async () => {
+  try {
+    const { data, error } = await supabase
+      .from("users")
+      .update({ logged: false })
+      .eq('logged', true);  // Solo actualiza usuarios que están actualmente logueados
+
+    if (error) {
+      console.error("Error al desloguear usuarios:", error.message);
+      throw error;
+    }
+
+    return data;
+  } catch (error) {
+    console.error("Error en setAllUsersLoggedToFalse:", error.message);
+    throw error;
+  }
+};
 module.exports = {
   createUser,
   getAllUsers,
   getLastUser,
   findUserByEmail,
   updateUserLogged,
-  addCreditsToLoggedUser
+  addCreditsToLoggedUser,
+  setAllUsersLoggedToFalse
 };
