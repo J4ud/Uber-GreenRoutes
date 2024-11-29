@@ -36,7 +36,8 @@ export default function renderFormulario() {
       });
   
       if (!response.ok) {
-        throw new Error("Error al guardar los datos");
+        const errorResponse = await response.json();
+        throw new Error(errorResponse.message || "Error al guardar los datos");
       }
   
       const result = await response.json();
@@ -44,6 +45,7 @@ export default function renderFormulario() {
       socket.emit("dataSaved"); // Notifica que los datos se guardaron
       socket.emit("recycleProcess"); // Notifica que los datos se guardaron
     } catch (error) {
-      console.error("Error al enviar los datos:", error);
+      console.error("Error al enviar los datos:", error.message);
+      alert(`Error al guardar los datos: ${error.message}`); // Muestra un mensaje de error en el cliente
     }
   });}

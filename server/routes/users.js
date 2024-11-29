@@ -6,6 +6,8 @@ const router = express.Router();
 router.get("/users", usersController.getUsers);
 router.get("/users/:id", usersController.getUser);
 router.post("/users", usersController.createUsers);
+router.post("/users/update-credits", usersController.updateCredits); // Nuevo endpoint
+
 
 
 module.exports = router;

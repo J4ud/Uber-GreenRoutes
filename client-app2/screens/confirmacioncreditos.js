@@ -10,16 +10,38 @@ export default function renderConfirmacionCreditos() {
     `;
 
   // Escuchar el evento del servidor para recibir los créditos.
-  socket.on("creditosRecibidos", (data) => {
-    const creditosContainer = document.getElementById("creditosContainer");
-    // Mostrar los créditos recibidos.
-    creditosContainer.innerHTML = `<p>Has recibido ${data.creditos} créditos.</p>`;
+   // Escuchar el evento del servidor "depositado"
+  socket.on("depositado", async () => {
+    console.log("Evento 'depositado' recibido. Actualizando créditos...");
+    try {
+      // Notificar al servidor para actualizar los créditos
+      const response = await fetch("http://localhost:5050/api/users/update-credits", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ credits: 100 }),
+      });
+
+      if (!response.ok) {
+        const errorResponse = await response.json();
+        throw new Error(errorResponse.message || "Error al actualizar créditos");
+      }
+
+      const result = await response.json();
+      console.log("Créditos actualizados correctamente:", result);
+
+      // Mostrar los créditos actualizados en la interfaz
+      const creditosContainer = document.getElementById("creditosContainer");
+      creditosContainer.innerHTML = `<p>Se han añadido 100 créditos a tu cuenta.</p>`;
+    } catch (error) {
+      console.error("Error al actualizar créditos:", error.message);
+      alert(`Error al actualizar créditos: ${error.message}`);
+    }
   });
 
   const finalizeButton = document.getElementById("finalizeButton");
   finalizeButton.addEventListener("click", () => {
-    // En lugar de redirigir, mostramos un mensaje de agradecimiento
     alert("Proceso finalizado. Gracias por reciclar.");
- 
   });
 }

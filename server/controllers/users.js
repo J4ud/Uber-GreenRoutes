@@ -1,5 +1,6 @@
-const users = require("../db/entities/users");
+const { findUserByEmail, createUser, updateUserLogged, addCreditsToLoggedUser } = require("../db/entities/users");
 const { getIO } = require("../socket");
+
 
 const getUsers = async (req, res) => {
   try {
@@ -30,18 +31,24 @@ const getAllUsers = async () => {
 
 
 const createUsers = async (req, res) => {
-  try {
-    const userData = req.body; // Datos enviados desde el cliente
-    const result = await users.createUser(userData); // Llama a la lógica de negocio
+  const { name, email } = req.body;
 
-    if (result instanceof Error) {
-      res.status(400).json({ error: result.message });
+  try {
+    // Verificar si el usuario ya existe
+    let user = await findUserByEmail(email);
+
+    if (!user) {
+      // Crear el usuario con la columna "logged" en true
+      user = await createUser({ name, email, logged: true });
     } else {
-      res.status(201).json({ message: "Usuario creado exitosamente", data: result });
+      // Actualizar "logged" a true si el usuario ya existe
+      await updateUserLogged(email, true);
     }
+
+    res.status(200).json({ message: "Usuario procesado correctamente", user });
   } catch (error) {
-    console.error("Error al procesar el usuario:", error);
-    res.status(500).json({ error: "Error interno del servidor" });
+    console.error("Error al crear el usuario:", error.message);
+    res.status(500).json({ message: "Error al procesar el usuario" });
   }
 };
 
@@ -77,11 +84,36 @@ const deleteUser = async (req, res) => {
   }
 };
 
+
+const updateCredits = async (req, res) => {
+  const { credits } = req.body; // Créditos a sumar
+
+  try {
+    // Llama a la función de la base de datos para actualizar los créditos
+    const updatedUser = await addCreditsToLoggedUser(credits);
+
+    if (!updatedUser) {
+      return res.status(404).json({ message: "No hay usuarios activos para actualizar créditos" });
+    }
+
+    res.status(200).json({
+      message: "Créditos actualizados correctamente",
+      data: updatedUser,
+    });
+  } catch (error) {
+    console.error("Error al actualizar créditos en el controlador:", error.message);
+    res.status(500).json({ message: "Error interno del servidor" });
+  }
+};
+
+
 module.exports = {
   getUsers,
   createUsers,
   getUser,
   updateUser,
   deleteUser,
-  getAllUsers
+  getAllUsers,
+  addCreditsToLoggedUser,
+  updateCredits
 };

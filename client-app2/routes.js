@@ -3,8 +3,8 @@ import renderFormulario from "./screens/formulario.js";  // Pantalla de formular
  // Pantalla de confirmación de créditos
 import renderReciclaje from "./screens/renderReciclaje.js";  // Nueva pantalla de reciclaje
 import socket from "./socket.js";  // Importa el socket
-import renderStart from "./screens/start.js";
-import renderConfirmacionCreditos from "./screens/confirmaciónCreditos.js";
+
+import renderConfirmacionCreditos from "./screens/confirmacionCreditos.js";
 
 const router = new Router({
   mode: "hash",
@@ -22,7 +22,7 @@ function clearScripts() {
 // Definición de rutas
 router.add("/", async () => {
   clearScripts();
-  renderStart();  // Pantalla principal que muestra el código QR
+  renderFormulario();  // Pantalla principal que muestra el código QR
 });
 
 router.add("/formulario", async () => {
@@ -30,7 +30,7 @@ router.add("/formulario", async () => {
   renderFormulario(); // Muestra el formulario
 });
 
-router.add("/confirmacionCreditos", async () => {
+router.add("/confirmacioncreditos", async () => {
   clearScripts();
   renderConfirmacionCreditos(); // Pantalla de confirmación de créditos
 });
@@ -42,12 +42,16 @@ router.add("/reciclaje", async () => {
 
 // Escuchar eventos del servidor
 socket.on("creditsSent", (data) => {
-  router.navigateTo("/confirmacionCreditos");  // Navega a la pantalla de confirmación de créditos
+  router.navigateTo("/confirmacioncreditos");  // Navega a la pantalla de confirmación de créditos
 });
 
 // Aquí puedes añadir el evento que desencadene la pantalla de reciclaje
 socket.on("dataSaved", () => {
   router.navigateTo("/reciclaje");  // Navega a la pantalla de reciclaje
+});
+
+socket.on("depositado", () => {
+  router.navigateTo("/confirmacioncreditos");  // Navega a la pantalla de reciclaje
 });
 
 router.check().addUriListener();
