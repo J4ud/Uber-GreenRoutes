@@ -3,12 +3,6 @@ import { router, socket } from "../routes.js";
 export default function renderScreen1() {
   const app = document.getElementById("app");
   app.innerHTML = `
-<<<<<<< HEAD
-        <h1>Gana dinero reciclando</h1>
-        <p>Por cada botella que depositas, acumulas saldo que puedes usar en la app de Uber.</p>
-        <button id="goToScreen2">¡Recicla!</button>
-    `;
-=======
 <header class="navbar">
       <img src="images/frame1.webp" alt="Logo Uber" class="navbar-logo">
     </header>
@@ -28,7 +22,6 @@ export default function renderScreen1() {
     </div>
 
   `;
->>>>>>> develop-Jaud
 
   document.getElementById("goToScreen2").addEventListener("click", () => {
     router.navigateTo("/qrScreen");

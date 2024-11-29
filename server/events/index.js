@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-const { ClientEvents } = require("./Client1Events")
-=======
 // const { ClientEvents } = require("./Client1Events")
->>>>>>> develop-Jaud
 const { IAEvents } = require("./IAEvents")
 const { serverEvents } = require("./ServerEvents")
 const { Eventsclient2 } = require("./Eventsclient2")
@@ -18,10 +14,5 @@ const handleEvents = (socket, io) => {
   
   
 }
-<<<<<<< HEAD
- 
-module.exports = {handleEvents};
-=======
 
 module.exports = { handleEvents }
->>>>>>> develop-Jaud

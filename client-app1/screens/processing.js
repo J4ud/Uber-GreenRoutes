@@ -9,10 +9,7 @@ export default function renderScreen4() {
             
           
           
-<<<<<<< HEAD
-=======
            
->>>>>>> develop-Jaud
           </div>
         </div>
     `;

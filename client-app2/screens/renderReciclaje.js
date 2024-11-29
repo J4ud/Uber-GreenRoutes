@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-import socket from "../routes.js";
-=======
 import { router, socket } from "../routes.js";
->>>>>>> develop-Jaud
 
 export default function renderReciclaje() {
   const app = document.getElementById("app");

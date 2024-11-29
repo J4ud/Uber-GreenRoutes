@@ -1,12 +1,3 @@
-<<<<<<< HEAD
-import Router from "vanilla-router";
-import renderScreen1 from "./screens/screen1.js";
-import renderScreen2 from "./screens/screen2.js";
-import renderScreen3 from "./screens/screen3.js";
-import socket from "./socket.js";
-
-const router = new Router  ({ // check this for more features with Router: https://github.com/Graidenix/vanilla-router
-=======
 import renderScreen1 from "./screens/start.js";
 import renderScreen2 from "./screens/qrScreen.js";
 
@@ -18,7 +9,6 @@ import renderAwait from "./screens/await.js";
 import renderCameraScreen from "./screens/cameraScreen.js";
 
 const router = new Router({ // check this for more features with Router: https://github.com/Graidenix/vanilla-router
->>>>>>> develop-Jaud
   mode: "hash",
   page404: (path) => {
     const app = document.getElementById("app");

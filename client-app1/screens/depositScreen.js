@@ -37,15 +37,7 @@ export default function renderScreen5() {
     
 
 
-<<<<<<< HEAD
-  document.getElementById("simular2").addEventListener("click", () => {
-    socket.emit("depositado");
-    router.navigateTo("/pCompleted");
-  });
 
-  
-}
-=======
   
 
   socket.on("depositado", () => {
@@ -55,4 +47,4 @@ export default function renderScreen5() {
   });
 }
 
->>>>>>> develop-Jaud
+

@@ -3,13 +3,7 @@ import { router, socket } from "../routes.js";
 export default function renderAwait() {
   const app = document.getElementById("app");
   app.innerHTML = `
-<<<<<<< HEAD
-        <div class="container">
-          <div class="content">
-            <p class="title">¡Completa el formulario en tu telefono!</p>
-          </div>
-        </div>
-=======
+
     <header class="navbar">
      <img src="images/frame1.webp" alt="Logo Uber" class="navbar-logo">
     </header>
@@ -20,7 +14,7 @@ export default function renderAwait() {
       <img src="images/loading-screen.webp" alt="Background" class="await-background">
     </div>
 
->>>>>>> develop-Jaud
+
     `;
 
   // Escuchar el evento 'dataSaved' para cambiar a la pantalla de cámara
