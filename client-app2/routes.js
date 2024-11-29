@@ -1,12 +1,4 @@
-<<<<<<< HEAD
-import renderCodigoQR from "./screens/codigoqr.js";  // Pantalla de escaneo de QR
-import renderFormulario from "./screens/formulario.js";  // Pantalla de formulario
-import renderConfirmacionCreditos from "./screens/confirmacioncreditos.js";  // Pantalla de confirmación de créditos
-import renderReciclaje from "./screens/renderReciclaje.js";  // Nueva pantalla de reciclaje
 
-import socket from "./socket.js";  // Importa el socket
-import Router from "vanilla-router";
-=======
 
 import renderFormulario from "./screens/formulario.js";  // Pantalla de formulario
  // Pantalla de confirmación de créditos
@@ -14,7 +6,7 @@ import renderReciclaje from "./screens/renderReciclaje.js";  // Nueva pantalla d
 import socket from "./socket.js";  // Importa el socket
 
 import renderConfirmacionCreditos from "./screens/confirmacion.js";
->>>>>>> develop-Jaud
+
 
 const router = new Router({
   mode: "hash",
@@ -31,13 +23,9 @@ function clearScripts() {
 
 // Definición de rutas
 router.add("/", async () => {
-<<<<<<< HEAD
-  clearScripts()
-  renderCodigoQR()  // Pantalla principal que muestra el código QR
-=======
+
   clearScripts();
   renderFormulario();  // Pantalla principal que muestra el código QR
->>>>>>> develop-Jaud
 });
 
 router.add("/formulario", async () => {
