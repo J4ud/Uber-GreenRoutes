@@ -3,22 +3,7 @@ import { router, socket } from "../routes.js";
 export default function renderCameraScreen() {
   const app = document.getElementById("app");
   app.innerHTML = `
-<<<<<<< HEAD
-    <div class="container">
-      <div class="content">
-         <p class="title">¡Asegúrate de que tu producto esté dentro del cuadro!</p>
-<<<<<<< HEAD
-         <p class="description">Esto nos ayudará a procesar correctamente el material y asegurarte que recibas tu máximo beneficio.</p>
-=======
-         <p class="description">Esto nos ayudará a procesar correctamente el material y asegurarte que recibas el máximo beneficio.</p>
->>>>>>> develop-Jaud
-         <button id="plastico" style="display: none;">Plastico Reconocido</button>
-         <div id="webcam-container"></div>
-         <div id="label-container"></div>
-         <div id="error-message" style="color: red;"></div>
-      </div>
-=======
-   <header class="navbar">
+  <header class="navbar">
     <img src="images/frame1.webp" alt="Logo Uber" class="navbar-logo">
   </header>
   <div class="main-container">
@@ -29,7 +14,6 @@ export default function renderCameraScreen() {
       <div id="label-container"></div>
       <button id="plastico" style="display: none;">Plástico Reconocido</button>
       <div id="error-message" style="color: red;"></div>
->>>>>>> Uber/developLuisa
     </div>
   </div>
   `;

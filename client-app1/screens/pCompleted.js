@@ -8,7 +8,7 @@ export default function renderScreen6() {
     </header>
     <div class="page-container">
       <div class="body-content">
-        <p class="headline">proceso completado</p>
+        <p class="headline">Proceso completado</p>
         <p class="paragraph-info">El proceso de reciclaje ha concluido con éxito. Ahora podrás mirar en tu telefono la cantidad de creditos recibidos.</p>
         <div class="image-container">
           <img src="images/recycle.webp" alt="Recycle bin">

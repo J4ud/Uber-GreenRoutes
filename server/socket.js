@@ -7,7 +7,7 @@ const initSocket = (httpServer) => {
   io = new Server(httpServer, {
     path: "/real-time",
     cors: {
-      origin: "*", // Allow requests from any origin
+      origin: "http://localhost:5050", // Allow requests from any origin
     },
   }) // Creates a WebSocket server, using the same HTTP server as the Express app and listening on the /real-time path
 

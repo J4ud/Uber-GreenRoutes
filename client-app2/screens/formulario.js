@@ -18,19 +18,19 @@ export default function renderFormulario() {
 
     <!-- Etiqueta y campo para el número de celular -->
     <label for="phoneInput" class="form-label">correo electronico</label>
-    <input type="tel" id="emailInput" placeholder="Ingresa tu correo electronico" required />
+    <input type="text" id="phoneInput" placeholder="Ingresa tu correo electronico" required />
     
     <button type="submit">Enviar</button>
 </form>
   `;
-
+   socket.emit("client2form");
   const dataForm = document.getElementById("dataForm");
 
   dataForm.addEventListener("submit", async (event) => {
     event.preventDefault();
     const formData = {
       name: document.getElementById("dataInput").value,
-      email: document.getElementById("emailInput").value,
+      email: document.getElementById("phoneInput").value,
     };
   
     try {

@@ -1,5 +1,5 @@
 
-const socket = io("http://localhost:5050", { path: "/real-time" });
+const socket = io("http://localhost:5050", { path: "/real-time" }); // Update this to your server URL
 
 // Conexión exitosa
 socket.on("connect", () => {

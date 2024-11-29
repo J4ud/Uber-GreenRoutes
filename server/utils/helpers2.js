@@ -15,11 +15,7 @@ const encenderCamara = () => {
 
 
 const mostrarMensajeProductoPlastico = () => {
-<<<<<<< HEAD
-  console.log("Se ha detectado un producto plástico");
-=======
   console.log("Se ha detectado un nuevo producto plástico");
->>>>>>> develop-Jaud
 };
 
   module.exports = { encenderCamara, mostrarMensajeProductoPlastico }

@@ -18,14 +18,14 @@ port.pipe(parser);
 // --------------- SERIAL LISTENERS ---------------------
 
 parser.on("data", (data) => {
-  // console.log("Dato recibido desde Arduino:", data);
+  console.log("Dato recibido desde Arduino:", data);
 
   // Si el Arduino envía "DEPOSITADO", emitir el evento
   if (data.trim() === "DEPOSITADO") {
     try {
       const io = getIO(); // Obtener la instancia de io
       io.emit("depositado"); // Emitir el evento a todos los clientes conectados
-      console.log("Evento 'depositado' emitido");
+      // rs
     } catch (error) {
       console.error("Error al emitir el evento 'depositado':", error.message);
     }

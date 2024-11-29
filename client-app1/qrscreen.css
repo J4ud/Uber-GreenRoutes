@@ -26,7 +26,7 @@ body {
 
 /* Background Image */
 .bgimage {
-  width: 85%;
+  width: 70vw;
   margin: 0 auto;
   display: block;
   position: relative;
@@ -35,7 +35,7 @@ body {
 /* Content Layout */
 .content {
   position: absolute; /* Permite posicionar dentro del contenedor */
-  top: 49%; /* Alinea verticalmente al centro */
+  top: 50%; /* Alinea verticalmente al centro */
   left: 50%; /* Alinea horizontalmente al centro */
   transform: translate(-50%, -50%); /* Ajusta la posición para centrar completamente */
   display: flex; /* Activa flexbox para el contenido */
@@ -69,7 +69,7 @@ body {
 .qr-button {
   display: block; /* Asegura que esté en una nueva línea */
   margin: 20px auto 0; /* Centra el botón y añade espacio superior */
-  background-color: #007bff;
+  background-color: #BAE394;
   color: #fff;
   border: none;
   padding: 10px 20px;
@@ -79,7 +79,7 @@ body {
 }
 
 .qr-button:hover {
-  background-color: #0056b3;
+  background-color: #BAE394;
 }
 
 /* ESTILOS PAGINA DE AWAIT */

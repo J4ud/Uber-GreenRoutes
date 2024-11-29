@@ -20,11 +20,9 @@ export default function renderScreen2() {
       <p class="description">
         El reciclaje tiene sus beneficios, y este código es la prueba. Canjéalo para aplicar tu cash y viajar sabiendo que hiciste la diferencia.
       </p>
+        <button id="simular" class="qr-button">Continuar</button>
     </div>
-  </div>
-  <!-- Button Outside Content -->
-  <button id="simular" class="qr-button">Simular</button>
-</div>
+ 
     `;
 
     
@@ -34,6 +32,10 @@ export default function renderScreen2() {
     socket.emit("client2form");
     router.navigateTo("/await");
     
+    socket.on("client2form", () => {
+      
+      router.navigate("/await");  // Este es solo un ejemplo, puedes poner la ruta que desees
+    });
   });
 
   

@@ -4,7 +4,7 @@ export default function renderAwait() {
   const app = document.getElementById("app");
   app.innerHTML = `
 
-    <header class="navbar">
+      <header class="navbar">
      <img src="images/frame1.webp" alt="Logo Uber" class="navbar-logo">
     </header>
     <div class="await-screen">
@@ -13,6 +13,7 @@ export default function renderAwait() {
       </div>
       <img src="images/loading-screen.webp" alt="Background" class="await-background">
     </div>
+
 
 
     `;

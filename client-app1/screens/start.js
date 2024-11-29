@@ -3,7 +3,7 @@ import { router, socket } from "../routes.js";
 export default function renderScreen1() {
   const app = document.getElementById("app");
   app.innerHTML = `
-<header class="navbar">
+  <header class="navbar">
       <img src="images/frame1.webp" alt="Logo Uber" class="navbar-logo">
     </header>
     <div class="main-content">
@@ -20,7 +20,6 @@ export default function renderScreen1() {
           </div>
       </div>
     </div>
-
   `;
 
   document.getElementById("goToScreen2").addEventListener("click", () => {
