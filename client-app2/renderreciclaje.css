@@ -1,0 +1,28 @@
+/* Estilo global */
+body {
+    background-color: #0e0e0e; /* Fondo oscuro */
+    color: white; /* Texto blanco */
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  
+  /* Estilo para el título principal */
+  h1 {
+    text-align: center;
+    font-size: 2em;
+    margin-top: 100px; /* Espacio debajo del header */
+    margin-bottom: 20px; /* Espacio debajo del título */
+    font-weight: normal; /* Título no bold */
+  }
+  
+  /* Estilo para el párrafo */
+  p {
+    text-align: center;
+    font-size: 1.2em; /* Tamaño del texto del párrafo */
+    line-height: 1.6; /* Espaciado entre líneas */
+    margin: 0 20px; /* Márgenes laterales */
+    margin-bottom: 40px; /* Espacio inferior */
+  }
+  
